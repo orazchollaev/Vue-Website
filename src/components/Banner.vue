@@ -1,0 +1,177 @@
+<template>
+    <div class="banner">
+        <div class="banner__container">
+            <div class="banner__content-wrapper">
+                <h1 class="banner__title">
+                    Корпоративное онлайн-обучение через геймификацию,
+                    <span class="banner__primary-color">которое сэкономит время и прокачает скилы ваших
+                        сотрудников</span>
+                </h1>
+
+                <p class="banner__text">Обучите сотрудников практическим навыкам через игровые методики</p>
+            </div>
+
+            <div class="banner__button-wrapper">
+                <BaseButton btnClass="primary big">Обсудить проект</BaseButton>
+                <BaseButton btnClass="gray big">Посмотреть демо</BaseButton>
+            </div>
+
+            <div class="banner__card-wrapper">
+                <div class="banner__card">
+                    <img src="@/assets/images/people_1.png" class="banner__card-img">
+                </div>
+
+                <div class="banner__card">
+                    <div class="banner__card-row">
+                        <BaseCard cardClass="black" title="50%"
+                            text="Средний процент увеличения производительности компании"></BaseCard>
+
+                        <div class="banner__card-column">
+                            <BaseCard cardClass="gray" title="60%"
+                                text="Процент роста вовлеченности и мотивации сотрудников"></BaseCard>
+                            <BaseCard cardClass="gray" title="60%" text="Средний процент увеличения производительности">
+                            </BaseCard>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="banner__card">
+                    <div class="banner__card-row reverse">
+                        <BaseCard cardClass="primary" title="50%"
+                            text="Средний процент увеличения производительности компании"></BaseCard>
+
+                        <div class="banner__card-column">
+                            <BaseCard cardClass="gray" title="60%"
+                                text="Средний процент увеличения производительности компании"></BaseCard>
+                            <img src="@/assets/images/people_3.png" class="banner__card-img">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="banner__card">
+                    <img src="@/assets/images/people_2.png" class="banner__card-img">
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script lang="ts" setup>
+import BaseButton from './Base/BaseButton.vue';
+import BaseCard from './Base/BaseCard.vue';
+
+</script>
+
+<style lang="scss" scoped>
+.banner {
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        gap: 48px;
+        padding: 25px 0;
+    }
+
+    &__content-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    &__title {
+        font-size: 48px;
+        font-weight: 300;
+        line-height: 60px;
+    }
+
+    &__text {
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 30px;
+        color: #7d7d7d;
+    }
+
+    &__button-wrapper {
+        display: flex;
+        gap: 16px;
+    }
+
+    &__card-wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        align-items: flex-start;
+
+        @media(min-width: 769px) {
+            grid-template-rows: repeat(3, .7fr);
+        }
+
+        @media(max-width: 768px){
+            grid-template-columns: 1fr;
+            gap: 8px;
+        }
+    }
+
+    &__card {
+        height: 100%;
+
+
+        @media(min-width: 769px) {
+            &:nth-of-type(2) {
+                grid-area: 1 / 2 / span 2 / span 1;
+            }
+
+            &:nth-of-type(3) {
+                grid-area: 2 / 1 / span 2 / span 1;
+            }
+        }
+
+        @media (max-width: 768px){
+            &:nth-of-type(3){
+                grid-area: 4 / 1 / span 1 / span 1;
+            }
+        }
+    }
+
+    &__card-row {
+        height: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 16px;
+
+        &.reverse {
+            flex-direction: row-reverse;
+
+            
+        @media(max-width: 768px){
+            flex-direction: row;
+        }
+        }
+
+        @media(max-width: 768px){
+            flex-direction: row-reverse;
+        }
+    }
+
+    &__card-column {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        gap: 16px;
+
+    }
+
+    &__card-img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        object-position: center;
+    }
+
+}
+</style>

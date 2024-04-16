@@ -1,0 +1,25 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    font-family: 'Geologica';
+}
+
+[class*='__container'] {
+	max-width: 1200px;
+	margin: 0 auto;
+
+    @media(max-width: 1200px){
+        margin: 0 20px;
+    }
+}
+
+[class*='__primary-color'] {
+	color: var(--primary);
+}
