@@ -51,6 +51,11 @@ button {
         line-height: 24px;
         padding: 8px 28px;
         border-radius: 15px;
+
+        @media (max-width: 768px){
+            padding: 8px 20px;
+            font-size: 12px;
+        }
     }
 
     &.big {
@@ -61,8 +66,11 @@ button {
         padding: 16px 0;
         width: 250px;
 
-        &.gray{
-            width: 220px;
+
+        @media (max-width: 768px){
+            padding: 12px 20px;
+            font-size: 14px;
+            line-height: 24px;
         }
     }
 

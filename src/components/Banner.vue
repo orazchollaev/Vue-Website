@@ -16,41 +16,47 @@
                 <BaseButton btnClass="gray big">Посмотреть демо</BaseButton>
             </div>
 
-            <div class="banner__card-wrapper">
-                <div class="banner__card">
-                    <img src="@/assets/images/people_1.png" class="banner__card-img">
-                </div>
-
-                <div class="banner__card">
-                    <div class="banner__card-row">
-                        <BaseCard cardClass="black" title="50%"
-                            text="Средний процент увеличения производительности компании"></BaseCard>
-
-                        <div class="banner__card-column">
-                            <BaseCard cardClass="gray" title="60%"
-                                text="Процент роста вовлеченности и мотивации сотрудников"></BaseCard>
-                            <BaseCard cardClass="gray" title="60%" text="Средний процент увеличения производительности">
-                            </BaseCard>
-                        </div>
+            <div class="banner__bottom">
+                <div class="banner__card-wrapper">
+                    <div class="banner__card">
+                        <img src="@/assets/images/people_1.png" class="banner__card-img">
                     </div>
-                </div>
 
-                <div class="banner__card">
-                    <div class="banner__card-row reverse">
-                        <BaseCard cardClass="primary" title="50%"
-                            text="Средний процент увеличения производительности компании"></BaseCard>
-
-                        <div class="banner__card-column">
-                            <BaseCard cardClass="gray" title="60%"
+                    <div class="banner__card">
+                        <div class="banner__card-row">
+                            <BaseCard cardClass="black" title="50%"
                                 text="Средний процент увеличения производительности компании"></BaseCard>
-                            <img src="@/assets/images/people_3.png" class="banner__card-img">
+
+                            <div class="banner__card-column">
+                                <BaseCard cardClass="gray" title="60%"
+                                    text="Процент роста вовлеченности и мотивации сотрудников"></BaseCard>
+                                <BaseCard cardClass="gray" title="60%"
+                                    text="Средний процент увеличения производительности">
+                                </BaseCard>
+                            </div>
                         </div>
+                    </div>
+
+                    <div class="banner__card">
+                        <div class="banner__card-row reverse">
+                            <BaseCard cardClass="primary" title="30%"
+                                text="Процент среднего улучшения усвоения информации"></BaseCard>
+
+                            <div class="banner__card-column">
+                                <BaseCard cardClass="gray" title="89%"
+                                    text="Процент улучшения успеваемости при геймифицированном обучении"></BaseCard>
+                                <img src="@/assets/images/people_3.png" class="banner__card-img">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="banner__card">
+                        <img src="@/assets/images/people_2.png" class="banner__card-img">
                     </div>
                 </div>
 
-                <div class="banner__card">
-                    <img src="@/assets/images/people_2.png" class="banner__card-img">
-                </div>
+                <p class="banner__little-text">*Основано на данных исследований: eLearning Learning, <br /> компании
+                    Mordor Intelligence, ScienceDirect, Ceros</p>
             </div>
         </div>
     </div>
@@ -85,6 +91,11 @@ import BaseCard from './Base/BaseCard.vue';
         font-size: 48px;
         font-weight: 300;
         line-height: 60px;
+
+        @media (max-width: 768px) {
+            font-size: 26px;
+            line-height: 32.5px;
+        }
     }
 
     &__text {
@@ -92,11 +103,22 @@ import BaseCard from './Base/BaseCard.vue';
         font-weight: 300;
         line-height: 30px;
         color: #7d7d7d;
+
+        @media (max-width: 768px) {
+            font-size: 16px;
+            line-height: 20px;
+        }
     }
 
     &__button-wrapper {
         display: flex;
+        align-items: flex-start;
         gap: 16px;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            gap: 8px;
+        }
     }
 
     &__card-wrapper {
@@ -109,7 +131,7 @@ import BaseCard from './Base/BaseCard.vue';
             grid-template-rows: repeat(3, .7fr);
         }
 
-        @media(max-width: 768px){
+        @media(max-width: 768px) {
             grid-template-columns: 1fr;
             gap: 8px;
         }
@@ -129,8 +151,8 @@ import BaseCard from './Base/BaseCard.vue';
             }
         }
 
-        @media (max-width: 768px){
-            &:nth-of-type(3){
+        @media (max-width: 768px) {
+            &:nth-of-type(3) {
                 grid-area: 4 / 1 / span 1 / span 1;
             }
         }
@@ -146,13 +168,13 @@ import BaseCard from './Base/BaseCard.vue';
         &.reverse {
             flex-direction: row-reverse;
 
-            
-        @media(max-width: 768px){
-            flex-direction: row;
-        }
+
+            @media(max-width: 768px) {
+                flex-direction: row;
+            }
         }
 
-        @media(max-width: 768px){
+        @media(max-width: 768px) {
             flex-direction: row-reverse;
         }
     }
@@ -173,5 +195,14 @@ import BaseCard from './Base/BaseCard.vue';
         object-position: center;
     }
 
+    &__little-text {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 17.5px;
+        text-align: right;
+        color: #7d7d7d;
+        position: relative;
+        bottom: 55px;
+    }
 }
 </style>

@@ -58,6 +58,10 @@ import BaseButton from './Base/BaseButton.vue';
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        @media (max-width: 768px){
+            gap: 8px;
+        }
     }
 
     &__logo {
@@ -70,6 +74,17 @@ import BaseButton from './Base/BaseButton.vue';
         
         &:hover{
             transform: scale(1.05);
+        }
+
+        @media(max-width: 768px){
+            width: 65px;
+            height: 47.7px;
+        }
+    }
+
+    &__center{
+        @media(max-width: 768px){
+            display: none;
         }
     }
 
