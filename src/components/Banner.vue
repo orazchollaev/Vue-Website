@@ -58,9 +58,10 @@
                 <p class="banner__little-text">*Основано на данных исследований: eLearning Learning, <br /> компании
                     Mordor Intelligence, ScienceDirect, Ceros</p>
             </div>
+        <HowDoWeAchieve></HowDoWeAchieve>
+
         </div>
 
-        <HowDoWeAchieve></HowDoWeAchieve>
     </div>
 </template>
 
@@ -81,16 +82,20 @@ import HowDoWeAchieve from './HowDoWeAchieve.vue';
         display: flex;
         align-items: center;
         justify-content: center;
-        text-align: center;
         flex-direction: column;
         gap: 48px;
-        padding: 25px 0;
+        padding: 25px 0 96px 0;
+
+        @media (max-width: 768px){
+            padding-bottom: 40px;
+        }
     }
 
     &__content-wrapper {
         display: flex;
         flex-direction: column;
         gap: 32px;
+        text-align: center;
     }
 
     &__title {

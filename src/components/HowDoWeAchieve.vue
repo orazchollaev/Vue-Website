@@ -2,7 +2,7 @@
     <div class="achieve">
         <div class="achieve__container">
             <div class="achieve__top">
-                <h1 class="achieve__title">Как мы этого добиваемся?</h1>
+                <BaseTitle>Как мы этого добиваемся?</BaseTitle>
 
                 <ul class="achieve__list">
                     <li class="achieve__item" v-for="item in achieveList">
@@ -27,6 +27,7 @@
 
 <script lang="ts" setup>
 import { ref } from "vue";
+import BaseTitle from "./Base/BaseTitle.vue";
 
 const achieveList = ref([
     {
@@ -67,17 +68,6 @@ const achieveList = ref([
             flex-direction: column;
             align-items: flex-start;
             gap: 24px;
-        }
-    }
-
-    &__title {
-        font-size: 48px;
-        font-weight: 300;
-        line-height: 60px;
-
-        @media (max-width: 768px) {
-            font-size: 24px;
-            line-height: 30px;
         }
     }
 
