@@ -59,17 +59,23 @@
                     Mordor Intelligence, ScienceDirect, Ceros</p>
             </div>
         </div>
+
+        <HowDoWeAchieve></HowDoWeAchieve>
     </div>
 </template>
 
 <script lang="ts" setup>
 import BaseButton from './Base/BaseButton.vue';
 import BaseCard from './Base/BaseCard.vue';
+import HowDoWeAchieve from './HowDoWeAchieve.vue';
 
 </script>
 
 <style lang="scss" scoped>
 .banner {
+
+    background-color: #fbfbfb;
+    border-radius: 0 0 50px 50px;
 
     &__container {
         display: flex;
@@ -201,8 +207,13 @@ import BaseCard from './Base/BaseCard.vue';
         line-height: 17.5px;
         text-align: right;
         color: #7d7d7d;
-        position: relative;
-        bottom: 55px;
+        margin-top: -40px;
+
+        @media (max-width: 768px) {
+            font-size: 10px;
+            line-height: 12.5px;
+            margin-top: 10px;
+        }
     }
 }
 </style>

@@ -53,6 +53,8 @@ import BaseButton from './Base/BaseButton.vue';
 <style lang="scss" scoped>
 .header {
 
+    background-color: #fbfbfb;
+
     &__container {
         padding: 24px 0;
         display: flex;
