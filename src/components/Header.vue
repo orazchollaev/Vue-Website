@@ -14,7 +14,7 @@
                     </li>
 
                     <li class="header__menu-item">
-                        <RouterLink to="/" class="header__menu-link" active-class="header__menu-link-active">Этапы
+                        <RouterLink to="/about" class="header__menu-link" active-class="header__menu-link-active">Этапы
                         </RouterLink>
                     </li>
 

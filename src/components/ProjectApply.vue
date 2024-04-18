@@ -8,8 +8,7 @@
             <div class="project-apply__center">
                 <div class="project-apply__button" v-for="(button, index) in buttons"
                     :class="{ active: isActive == index }" @click="isActive = index">
-                    <img class="project-apply__button-icon"
-                        :src="require(`@/assets/images/button_icon_${button.iconID}.svg`)">
+                    <Icons :name="button.icon"></Icons>
                     <span class="project-apply__button-text">{{ button.text }}</span>
                 </div>
             </div>
@@ -36,28 +35,29 @@
 import BaseButton from './Base/BaseButton.vue';
 import BaseTitle from './Base/BaseTitle.vue';
 import { ref } from 'vue';
+import Icons from './Base/icon/Icons.vue';
 
 const isActive = ref(3);
 
 const buttons = ref([
     {
-        iconID: 1,
+        icon: 'buttonIcon1',
         text: 'Торговым компаниям'
     },
     {
-        iconID: 1,
+        icon: 'buttonIcon1',
         text: 'Заводам и фабрикам'
     },
     {
-        iconID: 3,
+        icon: 'buttonIcon3',
         text: 'Охранным предприятиям'
     },
     {
-        iconID: 5,
+        icon: 'buttonIcon5',
         text: 'Образовательным центрам'
     },
     {
-        iconID: 5,
+        icon: 'buttonIcon5',
         text: 'Мебельным предприятиям'
     },
 ])
@@ -190,6 +190,11 @@ const projectApplyList = ref([
         
         @media (max-width: 425px){
             height: 210px;
+        }
+
+        &:hover{
+            box-shadow: 1px 1px 8px var(--black);
+            transform: scale(1.04);
         }
     }
 

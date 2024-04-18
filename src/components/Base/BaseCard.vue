@@ -35,6 +35,11 @@ defineProps<{
     border-radius: 20px;
     color: var(--white);
     overflow: hidden;
+    transition: 0.2s;
+
+    &:hover{
+        transform: scale(0.95);
+    }
 
     @media(max-width: 1000px){
         padding: 8px 15px 8px 8px;

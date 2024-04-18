@@ -8,7 +8,7 @@
 
             <div class="tailored__content">
                 <div class="tailored__card" v-for="item in tailoredCardList">
-                    <div class="tailored__card-icon"></div>
+                    <Icons :name="item.icon"></Icons>
 
                     <p class="tailored__card-content">{{ item.content }}</p>
                 </div>
@@ -31,40 +31,41 @@ import BaseButton from './Base/BaseButton.vue';
 import BaseCard from './Base/BaseCard.vue';
 import BaseTitle from './Base/BaseTitle.vue';
 import { ref } from 'vue';
+import Icons from './Base/icon/Icons.vue';
 
 const tailoredCardList = ref([
     {
-        iconID: 1,
+        icon: 'video',
         content: "Разработаем игровые уроки в аудио или видеоформате"
     },
 
     {
-        iconID: 2,
+        icon: 'share',
         content: "Продумаем пошаговое обучение от урока к уроку без пропусков"
     },
 
     {
-        iconID: 3,
+        icon: 'lightbulb',
         content: "Смоделируем реальные ситуации для отработки практических навыков"
     },
 
     {
-        iconID: 4,
+        icon: 'users',
         content: "Внедрим игровых персонажей и многое другое"
     },
 
     {
-        iconID: 5,
+        icon: 'medal',
         content: "Предложим систему бонусов за пройденные уровни"
     },
 
     {
-        iconID: 6,
+        icon: 'box',
         content: "Предложим 3D-визуализацию для сложных обучений"
     },
 
     {
-        iconID: 7,
+        icon: 'dialog',
         content: "Настроим проверку домашнего задания и возможность обратной связи"
     }
 ])
