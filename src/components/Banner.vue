@@ -30,8 +30,9 @@
                             <div class="banner__card-column">
                                 <BaseCard cardClass="gray" title="60%"
                                     text="Процент роста вовлеченности и мотивации сотрудников"></BaseCard>
-                                <BaseCard cardClass="gray" title="60%"
-                                    text="Средний процент увеличения производительности">
+                                <BaseCard cardClass="gray" title="none"
+                                    text="Подходит для:">
+                                    <img style="width: 100%; height: auto;" src="@/assets/images/card-img.png">
                                 </BaseCard>
                             </div>
                         </div>

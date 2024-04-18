@@ -1,11 +1,14 @@
 <template>
     <div class="card" :class="cardClass">
         <div class="card__top">
-            <h1 class="card__title">{{ title }}</h1>
-            <span class="card__star">*</span>
+            <h1 class="card__title" v-if="title !== 'none'">{{ title }}</h1>
+            <span class="card__star" v-if="title !== 'none'">*</span>
+
+            <p class="card__text big" v-else>{{ text }}</p>
         </div>
-        <div class="card__bottom">
-            <p class="card__text">{{ text }}</p>
+        <div class="card__bottom" :class="{right: title === 'none'}">
+            <p class="card__text" v-if="title !== 'none'">{{ text }}</p>
+            <slot v-else></slot>
         </div>
     </div>
 </template>
@@ -41,6 +44,15 @@ defineProps<{
         display: flex;
     }
 
+    &__bottom{
+        &.right{
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            position: relative;
+        }
+    }
+
     &__title {
         font-size: 64px;
         font-weight: 300;
@@ -60,6 +72,17 @@ defineProps<{
 
         @media (max-width: 1000px){
             font-size: 10px;
+        }
+
+        &.big{
+font-size: 24px;
+font-weight: 300;
+line-height: 22px;
+
+@media (max-width: 768px){
+    font-size: 18px;
+    list-style: 18px;
+}
         }
     }
 

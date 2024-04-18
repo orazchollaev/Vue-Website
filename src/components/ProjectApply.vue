@@ -108,6 +108,10 @@ const projectApplyList = ref([
         display: flex;
         flex-direction: column;
         gap: 36px;
+
+        @media (max-width: 768px){
+            padding: 40px 0;
+        }
     }
 
     &__center {
@@ -210,6 +214,7 @@ const projectApplyList = ref([
         align-items: flex-start;
         justify-content: space-around;
         gap: 16px;
+        overflow: auto;
 
 
         @media (max-width: 768px){
