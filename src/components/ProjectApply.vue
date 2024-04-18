@@ -24,7 +24,7 @@
                     <div class="project-apply__card-right">
                         <p class="project-apply__text-title">{{ item.title_2 }}</p>
                         <p class="project-apply__text-content">{{ item.content }}</p>
-                        <BaseButton btnClass="primary big">Обсудить проект</BaseButton>
+                        <BaseButton btnClass="primary small">Обсудить проект</BaseButton>
                     </div>
                 </div>
             </div>
@@ -116,6 +116,10 @@ const projectApplyList = ref([
         align-items: center;
         flex-wrap: wrap;
         gap: 8px;
+
+        @media (max-width: 1200px) {
+            width: 100%;
+        }
     }
 
     &__button {
@@ -132,6 +136,10 @@ const projectApplyList = ref([
             background-color: #afafaf;
             color: var(--white);
         }
+
+        @media (max-width: 1200px) {
+            padding: 11px 12px;
+        }
     }
 
 
@@ -139,18 +147,28 @@ const projectApplyList = ref([
         font-size: 16px;
         font-weight: 300;
         line-height: 22px;
+
+        @media (max-width: 1200px) {
+            font-size: 10px;
+            line-height: 22px;
+        }
     }
 
     &__card {
+        width: 100%;
         display: flex;
         gap: 16px;
+        animation: card 0.7s forwards ease-out;
 
-        animation: card 0.7s forwards;
+        @media (max-width: 768px) {
+            flex-direction: column;
+            gap: 8px;
+        }
     }
 
     &__card-left {
-        min-width: 384px !important;
-        max-width: 384px !important;
+        min-width: 384px;
+        max-width: 384px;
         height: 324px;
         background-position: center;
         background-size: cover;
@@ -158,6 +176,17 @@ const projectApplyList = ref([
         display: flex;
         align-items: flex-end;
         padding: 0 0 30px 30px;
+        transition: 0.2s;
+
+        @media (max-width: 768px) {
+            min-width: 100%;
+            max-width: 100%;
+            padding: 0 0 16px 16px;
+        }
+        
+        @media (max-width: 425px){
+            height: 210px;
+        }
     }
 
     &__card-img-title {
@@ -165,6 +194,11 @@ const projectApplyList = ref([
         font-weight: 400;
         line-height: 31px;
         color: var(--white);
+
+        @media (max-width: 768px){
+            font-size: 20px;
+            line-height: 24px;
+        }
     }
 
     &__card-right {
@@ -175,12 +209,23 @@ const projectApplyList = ref([
         background-color: #fbfbfb;
         align-items: flex-start;
         justify-content: space-around;
+        gap: 16px;
+
+
+        @media (max-width: 768px){
+            height: auto;
+        }
     }
 
     &__text-title {
         font-size: 24px;
         font-weight: 300;
         line-height: 30px;
+
+        @media (max-width: 768px){
+            font-size: 16px;
+            line-height: 20px;
+        }
     }
 
     &__text-content {
@@ -188,16 +233,25 @@ const projectApplyList = ref([
         font-weight: 300;
         line-height: 25px;
         color: #7d7d7d;
+
+        @media (max-width: 768px){
+            font-size: 14px;
+            line-height: 17.5px;
+        }
     }
 }
 
-@keyframes card{
-    0%{
-        transform: scale(0.5) rotate(-10deg);
+@keyframes card {
+    0% {
+        transform: scale(0.5);
     }
 
-    100%{
-        transform: scale(1) rotate(0deg);
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
     }
 }
 </style>
