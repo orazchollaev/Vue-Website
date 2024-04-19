@@ -15,7 +15,7 @@
 
                 <div class="tailored__last-card">
                     <p class="tailored__last-card-content">
-                        Напишите нам для уточнения деталей сотрудничества. <br/>
+                        Напишите нам для уточнения деталей сотрудничества. <br />
                         <span class="tailored__primary-color">Гарантируем эффективность для бизнеса в любой сфере</span>
                     </p>
 
@@ -79,6 +79,7 @@ const tailoredCardList = ref([
         display: flex;
         flex-direction: column;
         gap: 40px;
+        padding-bottom: 96px;
     }
 
     &__content {
@@ -87,12 +88,12 @@ const tailoredCardList = ref([
         grid-template-columns: repeat(3, 1fr);
         row-gap: 23px;
         column-gap: 16px;
-        
-        @media (max-width: 1200px){
+
+        @media (max-width: 1200px) {
             grid-template-columns: repeat(2, 1fr);
         }
 
-        @media (max-width: 768px){
+        @media (max-width: 768px) {
             grid-template-columns: 1fr;
             gap: 8px;
         }
@@ -107,13 +108,13 @@ const tailoredCardList = ref([
         align-items: center;
     }
 
-    &__card-icon{
+    &__card-icon {
         min-width: 35px;
         height: 35px;
         background-color: #aaa;
         border-radius: 12px;
 
-        @media (max-width: 768px){
+        @media (max-width: 768px) {
             min-width: 20px;
             height: 20px;
         }
@@ -124,36 +125,36 @@ const tailoredCardList = ref([
         font-weight: 300;
         line-height: 25px;
 
-        @media (max-width: 768px){
+        @media (max-width: 768px) {
             font-size: 14px;
             line-height: 17px;
         }
     }
 
-    &__last-card{
+    &__last-card {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         gap: 16px;
 
-        @media (min-width: 1201px){
+        @media (min-width: 1201px) {
             grid-area: 3 / 2 / span 1 / span 2;
         }
 
-        @media (max-width: 768px){
+        @media (max-width: 768px) {
             margin-top: 16px;
         }
     }
 
-    &__last-card-content{
-font-size: 20px;
-font-weight: 300;
-line-height: 25px;
+    &__last-card-content {
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 25px;
 
-@media (max-width: 768px){
-    font-size: 16px;
-    line-height: 20px;
-}
+        @media (max-width: 768px) {
+            font-size: 16px;
+            line-height: 20px;
+        }
     }
 }
 </style>

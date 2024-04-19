@@ -45,7 +45,7 @@ const buttons = ref([
         text: 'Торговым компаниям'
     },
     {
-        icon: 'buttonIcon1',
+        icon: 'delivery',
         text: 'Заводам и фабрикам'
     },
     {
@@ -53,7 +53,7 @@ const buttons = ref([
         text: 'Охранным предприятиям'
     },
     {
-        icon: 'buttonIcon5',
+        icon: 'academical_cap',
         text: 'Образовательным центрам'
     },
     {

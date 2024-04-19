@@ -24,15 +24,26 @@
 
                     <div class="banner__card">
                         <div class="banner__card-row">
-                            <BaseCard cardClass="black" title="50%"
-                                text="Средний процент увеличения производительности компании"></BaseCard>
+                            <BaseCard card-class="black" title-class="big" content-class="small">
+                                <template #title>50%</template>
+
+                                <template #content>Средний процент увеличения производительности компании</template>
+                            </BaseCard>
 
                             <div class="banner__card-column">
-                                <BaseCard cardClass="gray" title="60%"
-                                    text="Процент роста вовлеченности и мотивации сотрудников"></BaseCard>
-                                <BaseCard cardClass="gray" title="none"
-                                    text="Подходит для:">
-                                    <img style="width: 100%; height: auto;" src="@/assets/images/card-img.png">
+
+                                <BaseCard card-class="gray" title-class="big" content-class="small">
+                                    <template #title>60%</template>
+
+                                    <template #content>Процент роста вовлеченности и мотивации сотрудников</template>
+                                </BaseCard>
+
+                                <BaseCard card-class="gray" title-class="medium" content-class="image">
+                                    <template #title>Подходит для:</template>
+
+                                    <template #content>
+                                        <img style="width: 100%; height: auto;" src="@/assets/images/card-img.png">
+                                    </template>
                                 </BaseCard>
                             </div>
                         </div>
@@ -40,12 +51,18 @@
 
                     <div class="banner__card">
                         <div class="banner__card-row reverse">
-                            <BaseCard cardClass="primary" title="30%"
-                                text="Процент среднего улучшения усвоения информации"></BaseCard>
+                                <BaseCard card-class="primary" title-class="big" content-class="small">
+                                    <template #title>30%</template>
+
+                                    <template #content>Процент среднего улучшения усвоения информации</template>
+                                </BaseCard>
 
                             <div class="banner__card-column">
-                                <BaseCard cardClass="gray" title="89%"
-                                    text="Процент улучшения успеваемости при геймифицированном обучении"></BaseCard>
+                                <BaseCard card-class="gray" title-class="big" content-class="small">
+                                    <template #title>89%</template>
+
+                                    <template #content>Процент улучшения успеваемости при геймифицированном обучении</template>
+                                </BaseCard>
                                 <img src="@/assets/images/people_3.png" class="banner__card-img">
                             </div>
                         </div>
@@ -59,7 +76,7 @@
                 <p class="banner__little-text">*Основано на данных исследований: eLearning Learning, <br /> компании
                     Mordor Intelligence, ScienceDirect, Ceros</p>
             </div>
-        <HowDoWeAchieve></HowDoWeAchieve>
+            <HowDoWeAchieve></HowDoWeAchieve>
 
         </div>
 
@@ -87,7 +104,7 @@ import HowDoWeAchieve from './HowDoWeAchieve.vue';
         gap: 48px;
         padding: 25px 0 96px 0;
 
-        @media (max-width: 768px){
+        @media (max-width: 768px) {
             padding-bottom: 40px;
         }
     }
@@ -140,7 +157,7 @@ import HowDoWeAchieve from './HowDoWeAchieve.vue';
         align-items: flex-start;
 
         @media(min-width: 769px) {
-            grid-template-rows: repeat(3, .7fr);
+            grid-template-rows: repeat(3, .6fr);
         }
 
         @media(max-width: 768px) {

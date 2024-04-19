@@ -6,8 +6,7 @@
 
                 <ul class="achieve__list">
                     <li class="achieve__item" v-for="item in achieveList">
-                        <img :src="require(`@/assets/images/achieve_icon_${item.iconID}.png`)"
-                            class="achieve__item-icon">
+                        <Icons :name="item.icon"></Icons>
                         <p class="achieve__item-text">{{ item.text }}</p>
                     </li>
                 </ul>
@@ -28,20 +27,21 @@
 <script lang="ts" setup>
 import { ref } from "vue";
 import BaseTitle from "./Base/BaseTitle.vue";
+import Icons from "./Base/icon/Icons.vue";
 
 const achieveList = ref([
     {
-        iconID: 1,
+        icon: 'code',
         text: 'Разрабатываем систему геймификации, учитывая задачи вашего бизнеса не используя шаблоны'
     },
 
     {
-        iconID: 2,
+        icon: 'people_location',
         text: 'Предлагаем игровые механики в зависимости от возраста сотрудников, профессии и конечных целей, которые ставит обучение'
     },
 
     {
-        iconID: 3,
+        icon: 'history',
         text: 'Сокращаем сроки обучения без потери качества'
     }
 ])

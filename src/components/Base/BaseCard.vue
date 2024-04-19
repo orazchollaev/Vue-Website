@@ -1,25 +1,36 @@
 <template>
     <div class="card" :class="cardClass">
         <div class="card__top">
-            <h1 class="card__title" v-if="title !== 'none'">{{ title }}</h1>
-            <span class="card__star" v-if="title !== 'none'">*</span>
+            <h1 class="card__title" :class="titleClass" v-if="titleClass !== 'small'">
+                <slot name="title" class="efef"></slot>
+            </h1>
 
-            <p class="card__text big" v-else>{{ text }}</p>
+            <slot name="title" v-if="titleClass === 'small'"></slot>
         </div>
-        <div class="card__bottom" :class="{right: title === 'none'}">
-            <p class="card__text" v-if="title !== 'none'">{{ text }}</p>
-            <slot v-else></slot>
+
+        <div class="card__bottom" :class="contentClass">
+            <p class="card__content" :class="contentClass">
+                <slot name="content"></slot>
+            </p>
         </div>
     </div>
 </template>
 
 <script lang="ts" setup>
 
-defineProps<{
-    cardClass: string,
-    title: string,
-    text: string
-}>();
+const props = defineProps({
+    cardClass: {
+        type: String
+    },
+
+    titleClass: {
+        type: String
+    },
+
+    contentClass: {
+        type: String
+    }
+})
 
 </script>
 
@@ -27,80 +38,93 @@ defineProps<{
 .card {
     width: 100%;
     height: 100%;
+    padding: 20px;
+    border-radius: 20px;
     display: flex;
-    align-items: flex-start;
     flex-direction: column;
     justify-content: space-between;
-    padding: 20px 31px 20px 20px;
-    border-radius: 20px;
-    color: var(--white);
-    overflow: hidden;
-    transition: 0.2s;
 
-    &:hover{
-        transform: scale(0.95);
+    @media (max-width: 1024px){
+        gap: 20px;
     }
 
-    @media(max-width: 1000px){
-        padding: 8px 15px 8px 8px;
-    }
-
-    &__top {
-        display: flex;
-    }
-
-    &__bottom{
-        &.right{
-            width: 100%;
-            display: flex;
-            justify-content: flex-end;
-            position: relative;
-        }
+    @media (max-width: 768px){
+        padding: 8px;
     }
 
     &__title {
-        font-size: 64px;
-        font-weight: 300;
-        line-height: 70px;
-        text-align: left;
+        &.big {
+            font-size: 64px;
+            font-weight: 300;
+            line-height: 70px;
+            text-align: left;
 
-        @media (max-width: 1000px){
-            font-size: 36px;
+            @media (max-width: 1024px) {
+                font-size: 36px;
+                line-height: 38.18px;
+            }
+        }
+
+        &.medium {
+            font-size: 24px;
+            font-weight: 300;
+            line-height: 22px;
+            text-align: left;
+
+            @media (max-width: 1024px) {
+                font-size: 14px;
+                line-height: 17.5px;
+            }
+        }
+
+        &.double{
+            margin-bottom: 24px;
         }
     }
 
-    &__text {
-        font-size: 16px;
-        font-weight: 300;
-        line-height: 20px;
-        text-align: left;
+    &__content {
+        &.small {
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 20px;
+            text-align: left;
 
-        @media (max-width: 1000px){
-            font-size: 10px;
-        }
-
-        &.big{
-font-size: 24px;
-font-weight: 300;
-line-height: 22px;
-
-@media (max-width: 768px){
-    font-size: 18px;
-    list-style: 18px;
-}
+            @media (max-width: 1024px) {
+                font-size: 10px;
+                line-height: 12.5px;
+            }
         }
     }
 
-    &.black{
+    &__bottom {
+        &.image {
+            display: flex;
+            justify-content: flex-end;
+
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    &.black {
+        color: var(--white);
         background-color: var(--black);
     }
 
-    &.primary{
+    &.gray {
+        color: var(--black);
+        background-color: var(--gray);
+    }
+
+    &.primary {
+        color: var(--white);
         background-color: var(--primary);
     }
 
-    &.gray{
-        background-color: var(--gray);
+    &.white-gray{
+        background-color: #fbfbfb;
         color: var(--black);
     }
 }
