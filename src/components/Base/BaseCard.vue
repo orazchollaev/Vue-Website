@@ -43,10 +43,8 @@ const props = defineProps({
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 24px;
 
-    @media (max-width: 1024px){
-        gap: 20px;
-    }
 
     @media (max-width: 768px){
         padding: 8px;

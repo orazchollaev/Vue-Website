@@ -112,7 +112,6 @@ import BaseTitle from './Base/BaseTitle.vue';
         gap: 62px;
     }
 
-    &__top {}
 
     &__content {
         display: flex;
