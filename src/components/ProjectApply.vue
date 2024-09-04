@@ -15,9 +15,9 @@
 
             <div class="project-apply__bottom">
                 <div class="project-apply__card" v-for="(item, index) in projectApplyList" v-show="isActive == index">
-                    <div class="project-apply__card-left"
-                        :style="{ backgroundImage: `url(${require(`@/assets/images/project_apply_img_${item.imageID}.png`)})` }">
-                        <p class="project-apply__card-img-title">{{ item.title_1 }}</p>
+                    <div class="project-apply__card-left">
+                        <img class="project-apply__card-left-img" :src="require(`@/assets/images/project_apply_img_${item.imageID}.png`)">
+                        <p class="project-apply__card-left-title">{{ item.title_1 }}</p>
                     </div>
 
                     <div class="project-apply__card-right">
@@ -136,6 +136,10 @@ const projectApplyList = ref([
         cursor: pointer;
         transition: 0.1s;
 
+        &:hover{
+            background-color: #D6D6D6;
+        }
+
         &.active {
             background-color: #afafaf;
             color: var(--white);
@@ -171,38 +175,30 @@ const projectApplyList = ref([
     }
 
     &__card-left {
-        min-width: 384px;
-        max-width: 384px;
-        height: 324px;
-        background-position: center;
-        background-size: cover;
-        border-radius: 20px;
-        display: flex;
+        flex: 1 1 50%;
+        width: 100%;
+        height: auto;
+        display: grid;
         align-items: flex-end;
-        padding: 0 0 30px 30px;
-        transition: 0.2s;
 
-        @media (max-width: 768px) {
-            min-width: 100%;
-            max-width: 100%;
-            padding: 0 0 16px 16px;
-        }
-        
-        @media (max-width: 425px){
-            height: 210px;
-        }
-
-        &:hover{
-            box-shadow: 1px 1px 8px var(--black);
-            transform: scale(1.04);
+        & > *{
+            grid-column: 1 / -1;
+            grid-row: 1 / -1;
         }
     }
 
-    &__card-img-title {
+    &__card-left-img{
+        width: 100%;
+        height: 100%;
+        max-height: 400px;
+    }
+
+    &__card-left-title {
         font-size: 32px;
         font-weight: 400;
         line-height: 31px;
         color: var(--white);
+        margin: 0 0 30px 30px;
 
         @media (max-width: 768px){
             font-size: 20px;
@@ -211,7 +207,7 @@ const projectApplyList = ref([
     }
 
     &__card-right {
-        height: 324px;
+        flex: 1 1 100%;
         display: flex;
         flex-direction: column;
         padding: 30px;

@@ -12,8 +12,9 @@ const routes: Array<RouteRecordRaw> = [
     path: '/about',
     name: 'AboutPage',
     component: () => import('@/views/About.vue'),
-  }
+  },
 ]
+
 
 const router = createRouter({
   history: createWebHashHistory(),

@@ -114,6 +114,23 @@
                     </h2>
                 </div>
             </div>
+
+            <div class="interactive-training__bottom">
+                <div class="interactive-training__bottom-left">
+                    <BaseTitle>
+                        Не понимаете,
+                        как геймификация поможет вашему бизнесу?
+                    </BaseTitle>
+
+                    <p class="interactive-training__bottom-text">Оставьте контакт — и мы расскажем о возможных вариантах
+                    </p>
+                </div>
+
+                <div class="interactive-training__bottom-right">
+                    <BaseForm></BaseForm>
+                </div>
+            </div>
+
         </div>
     </div>
 </template>
@@ -122,7 +139,7 @@
 import BaseTitle from './Base/BaseTitle.vue';
 import BaseCard from './Base/BaseCard.vue';
 import Icons from './Base/icon/Icons.vue';
-
+import BaseForm from './Base/BaseForm.vue';
 
 </script>
 
@@ -135,6 +152,7 @@ import Icons from './Base/icon/Icons.vue';
         display: flex;
         flex-direction: column;
         gap: 48px;
+        padding-bottom: 96px;
     }
 
     &__card-wrapper {
@@ -168,6 +186,7 @@ import Icons from './Base/icon/Icons.vue';
         @media (max-width: 1200px) {
             flex-direction: row-reverse;
         }
+
     }
 
     &__card {
@@ -208,6 +227,14 @@ import Icons from './Base/icon/Icons.vue';
 
             }
         }
+
+        &:nth-of-type(5) {
+            div {
+                @media (max-width: 1200px) {
+                    flex-direction: column;
+                }
+            }
+        }
     }
 
     &__text {
@@ -230,6 +257,24 @@ import Icons from './Base/icon/Icons.vue';
         height: auto;
         object-position: center;
         object-fit: cover;
+    }
+
+    &__bottom {
+        display: flex;
+    }
+
+    &__bottom-left {
+        flex: 1 1 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    &__bottom-text {
+        font-size: 32px;
+        font-weight: 300;
+        line-height: 40px;
+        color: var(--primary);
     }
 }
 </style>
